@@ -1,5 +1,5 @@
 <!-- resources/views/layouts/app.blade.php -->
-
+<link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('resources/css/indexkhachhang.css') }}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,10 +17,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/sanpham') }}">Quản Lý Sản Phẩm</a>
+                    <a class="nav-link" href="{{ url('/sanpham') }}">Sản Phẩm</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/khachhang') }}">Quản Lý Khách Hàng</a>
+                    <a class="nav-link" href="{{ url('/khachhang') }}">Khách Hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/invoices') }}">Hóa Đơn</a>
                 </li>
             </ul>
         </div>

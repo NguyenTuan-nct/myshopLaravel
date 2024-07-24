@@ -1,4 +1,5 @@
-.navbar{
-    background-color: #007bff;
-    color: #ffffff;
+/* resources/css/custom.css */
+
+.navbar-light.bg-light {
+    background-color: #dff0d8 !important; /* Màu lục nhạt */
 }
