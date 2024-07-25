@@ -3,15 +3,15 @@
 
 @section('content')
 <div class="container">
-    <h1>Invoice Details for Invoice #{{ $invoice->id }}</h1>
-    <a href="{{ route('invoice_details.create', $invoice->id) }}">Add New Item</a>
+    <h1>Chi Tiết Hóa Đơn - Hóa Đơn {{ $invoice->id }}</h1>
+    <a href="{{ route('invoice_details.create', $invoice->id) }}">Thêm Sản Phẩm</a>
     <table>
         <tr>
             <th>ID</th>
-            <th>Item Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Actions</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Số Lượng</th>
+            <th>Giá</th>
+            <th>Hành Động</th>
         </tr>
         @foreach ($details as $detail)
             <tr>
@@ -24,7 +24,7 @@
                     <form action="{{ route('invoice_details.destroy', [$invoice->id, $detail->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Delete</button>
+                        <button type="submit">Xóa</button>
                     </form>
                 </td>
             </tr>

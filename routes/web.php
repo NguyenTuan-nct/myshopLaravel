@@ -42,7 +42,7 @@ Route::put('/sanpham/{id}', [SanPhamController::class, 'update'])->name('sanpham
 Route::delete('/sanpham/{id}', [SanPhamController::class, 'destroy'])->name('sanpham.destroy');
 Route::get('/addsp', [SanPhamController::class, 'create'])->name('sanpham.create');
 Route::post('/addsp', [SanPhamController::class, 'store'])->name('sanpham.store');
-
+ 
 use App\Http\Controllers\InvoiceController;
 Route::resource('invoices', InvoiceController::class);
 

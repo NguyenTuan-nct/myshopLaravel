@@ -3,15 +3,15 @@
 @section('title', 'Invoices')
 
 @section('content')
-    <h1>Invoices</h1>
+    <h1>Hóa Đơn</h1>
     <a href="{{ route('invoices.create') }}" class="btn btn-primary mb-3">Add New Invoice</a>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Customer Name</th>
-                <th>Total Amount</th>
-                <th>Actions</th>
+                <th>Tên Khách Hàng</th>
+                <th>Địa Chỉ</th>
+                <th>Hành Động</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@
                         <form action="{{ route('invoices.destroy', $invoice->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
                         </form>
                     </td>
                 </tr>

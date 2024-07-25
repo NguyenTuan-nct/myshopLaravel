@@ -29,7 +29,7 @@
                 <th>Tồn Kho</th>
                 <th>Mô Tả</th>
                 <th>Kho Hàng ID</th>
-                <th>Hành Động</th>
+                <th>Hành Động</th> 
             </tr>
         </thead>
         <tbody>
