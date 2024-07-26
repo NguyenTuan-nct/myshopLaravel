@@ -1,6 +1,6 @@
 <!-- resources/views/khachhang/create.blade.php -->
 
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title', 'Thêm Khách Hàng')
 

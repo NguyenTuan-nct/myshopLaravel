@@ -57,3 +57,9 @@ Route::post('invoices/{invoice}/details', [InvoiceDetailController::class, 'stor
 Route::get('invoices/{invoice}/details/{detail}/edit', [InvoiceDetailController::class, 'edit'])->name('invoice_details.edit');
 Route::put('invoices/{invoice}/details/{detail}', [InvoiceDetailController::class, 'update'])->name('invoice_details.update');
 Route::delete('invoices/{invoice}/details/{detail}', [InvoiceDetailController::class, 'destroy'])->name('invoice_details.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

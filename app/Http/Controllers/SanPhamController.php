@@ -47,7 +47,7 @@ class SanPhamController extends Controller
         $sanpham = DB::table('SanPham')->where('SanPhamId', $id)->first();
         return view('sanpham.edit', ['sanpham' => $sanpham]);
     }
-     public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $validated = $request->validate([
             'LoaiSanPham' => 'required|string|max:255',
@@ -63,5 +63,10 @@ class SanPhamController extends Controller
         DB::table('SanPham')->where('SanPhamId', $id)->update($validated);
 
         return redirect('/sanpham')->with('success', 'Sản phẩm đã được cập nhật thành công!');
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['edit','destroy','create']);
     }
 }

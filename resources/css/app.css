@@ -1,5 +1,20 @@
 /* resources/css/custom.css */
 
-.navbar-light.bg-light {
+.navbar{
     background-color: #dff0d8 !important; /* Màu lục nhạt */
+}
+.navbar {
+    background-color: #ffffff; /* Màu nền */
+    border-bottom: 1px solid #dddddd; /* Đường viền dưới cùng */
+}
+
+/* Điều chỉnh màu và kiểu chữ trong navbar-brand */
+.navbar-brand {
+    color: rgb(177, 16, 16); /* Màu chữ */
+    font-size: 1.5rem; /* Cỡ chữ */
+}
+
+/* Điều chỉnh kích thước biểu tượng trong navbar-toggler */
+.navbar-toggler-icon {
+    background-color: #333333; /* Màu nền của biểu tượng */
 }

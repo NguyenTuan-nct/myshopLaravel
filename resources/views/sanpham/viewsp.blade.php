@@ -1,6 +1,9 @@
 <!-- resources/views/sanpham/index.blade.php -->
+<link rel="stylesheet" href="{{ asset('resources/css/viewsp.css') }}">
+<!-- Thêm thư viện hover.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title', 'Quản Lý Sản Phẩm')
 
@@ -12,7 +15,7 @@
         </div>
     @endif
 
-    <a href="{{ url('/addsp') }}" class="btn btn-success mb-3">Thêm Sản Phẩm</a>
+    <a href="{{ url('/addsp') }}" class="btn btn-success mb-3 mt-4">Thêm Sản Phẩm</a>
 
     <hr>
 

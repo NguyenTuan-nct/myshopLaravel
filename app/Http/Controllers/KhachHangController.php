@@ -61,4 +61,9 @@ class KhachHangController extends Controller
 
         return redirect()->route('khachhang.index')->with('success', 'Khách hàng đã được xóa thành công!');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['edit','destroy','create']);
+    }
 }
