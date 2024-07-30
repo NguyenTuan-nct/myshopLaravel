@@ -65,8 +65,8 @@ class SanPhamController extends Controller
         return redirect('/sanpham')->with('success', 'Sản phẩm đã được cập nhật thành công!');
     }
 
-    public function __construct()
+   /* public function __construct()
     {
         $this->middleware('auth')->only(['edit','destroy','create']);
-    }
+    }*/
 }

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('resources/css/invoice.css') }}">
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
     <h1>Chỉnh sửa hóa đơn - Hóa đơn {{ $invoice->id }}</h1>
