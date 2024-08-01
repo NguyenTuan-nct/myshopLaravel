@@ -11,9 +11,7 @@
             {{ session('success') }}
         </div>
     @endif
-
-    <a href="{{ url('/addkh') }}" class="btn btn-success mb-3">Thêm Khách Hàng</a>
-    
+    <a href="{{ route('khachhang.store') }}" class="btn btn-primary mb-3">Add New KH</a>
     <hr>
     
     <h3>Danh sách Khách Hàng</h3>

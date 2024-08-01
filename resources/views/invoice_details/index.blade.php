@@ -7,7 +7,7 @@
     <a href="{{ route('invoice_details.create', $invoice->id) }}">Thêm Sản Phẩm</a>
     <table>
         <tr>
-            <th>ID</th>
+            <th>ID Sản Phẩm</th>
             <th>Tên Sản Phẩm</th>
             <th>Số Lượng</th>
             <th>Giá</th>

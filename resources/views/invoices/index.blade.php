@@ -4,11 +4,11 @@
 
 @section('content')
     <h1>Hóa Đơn</h1>
-    <a href="{{ route('invoices.create') }}" class="btn btn-primary mb-3">Add New Invoice</a>
+    <a href="{{ route('invoices.store') }}" class="btn btn-primary mb-3">Add New Invoice</a>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>ID Hóa Đơn</th>
                 <th>Tên Khách Hàng</th>
                 <th>Địa Chỉ</th>
                 <th>Hành Động</th>

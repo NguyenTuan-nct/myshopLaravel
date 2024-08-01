@@ -3,22 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Models\SanPham;
 
 class SanPhamController extends Controller
 {
-    public function viewsp()// tên
+    /*public function __construct()
     {
-        $sanphams = DB::table('SanPham')->get();
+        $this->middleware('auth')->only(['edit', 'destroy', 'create']);
+    }*/
+
+    public function viewsp() // Hiển thị danh sách sản phẩm
+    {
+        $sanphams = SanPham::all();
         return view('sanpham.viewsp', ['sanphams' => $sanphams]);
     }
 
-    public function create()
+    public function create() // Tạo sản phẩm mới
     {
         return view('sanpham.create');
     }
-    
-    public function store(Request $request)
+
+    public function store(Request $request) // Lưu sản phẩm mới
     {
         $validated = $request->validate([
             'LoaiSanPham' => 'required|string|max:255',
@@ -31,23 +36,18 @@ class SanPhamController extends Controller
             'KhoHangId' => 'required|integer',
         ]);
 
-        DB::table('SanPham')->insert($validated);
+        SanPham::create($validated); // Sử dụng Eloquent để tạo sản phẩm
 
         return redirect('/sanpham')->with('success', 'Sản phẩm đã được thêm thành công!');
     }
 
-    public function destroy($id)
+    public function edit($id) // Chỉnh sửa sản phẩm
     {
-        DB::table('SanPham')->where('SanPhamId', $id)->delete();
-        return redirect('/sanpham')->with('success', 'Sản phẩm đã được xóa thành công!');
-    }
-
-    public function edit($id)
-    {
-        $sanpham = DB::table('SanPham')->where('SanPhamId', $id)->first();
+        $sanpham = SanPham::findOrFail($id); // Sử dụng Eloquent để tìm sản phẩm
         return view('sanpham.edit', ['sanpham' => $sanpham]);
     }
-    public function update(Request $request, $id)
+
+    public function update(Request $request, $id) // Cập nhật sản phẩm
     {
         $validated = $request->validate([
             'LoaiSanPham' => 'required|string|max:255',
@@ -60,13 +60,16 @@ class SanPhamController extends Controller
             'KhoHangId' => 'required|integer',
         ]);
 
-        DB::table('SanPham')->where('SanPhamId', $id)->update($validated);
+        $sanpham = SanPham::findOrFail($id);
+        $sanpham->update($validated); // Sử dụng Eloquent để cập nhật sản phẩm
 
         return redirect('/sanpham')->with('success', 'Sản phẩm đã được cập nhật thành công!');
     }
 
-   /* public function __construct()
+    public function destroy($id) // Xóa sản phẩm
     {
-        $this->middleware('auth')->only(['edit','destroy','create']);
-    }*/
+        $sanpham = SanPham::findOrFail($id);
+        $sanpham->delete(); // Sử dụng Eloquent để xóa sản phẩm
+        return redirect('/sanpham')->with('success', 'Sản phẩm đã được xóa thành công!');
+    }
 }

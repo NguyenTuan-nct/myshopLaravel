@@ -14,9 +14,7 @@
             {{ session('success') }}
         </div>
     @endif
-
-    <a href="{{ url('/addsp') }}" class="btn btn-success mb-3 mt-4">Thêm Sản Phẩm</a>
-
+    <a href="{{ route('sanpham.store') }}" class="btn btn-primary mb-3">Add New SP</a>
     <hr>
 
     <h2 class="mt-4">Danh Sách Sản Phẩm</h2>
