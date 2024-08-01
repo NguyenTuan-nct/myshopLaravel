@@ -15,12 +15,12 @@ class SanPhamController extends Controller
     public function viewsp() // Hiển thị danh sách sản phẩm
     {
         $sanphams = SanPham::all();
-        return view('sanpham.viewsp', ['sanphams' => $sanphams]);
+        return view('admin.sanpham.viewsp', ['sanphams' => $sanphams]);
     }
 
     public function create() // Tạo sản phẩm mới
     {
-        return view('sanpham.create');
+        return view('admin.sanpham.create');
     }
 
     public function store(Request $request) // Lưu sản phẩm mới
@@ -38,13 +38,13 @@ class SanPhamController extends Controller
 
         SanPham::create($validated); // Sử dụng Eloquent để tạo sản phẩm
 
-        return redirect('/sanpham')->with('success', 'Sản phẩm đã được thêm thành công!');
+        return redirect('admin/sanpham')->with('success', 'Sản phẩm đã được thêm thành công!');
     }
 
     public function edit($id) // Chỉnh sửa sản phẩm
     {
         $sanpham = SanPham::findOrFail($id); // Sử dụng Eloquent để tìm sản phẩm
-        return view('sanpham.edit', ['sanpham' => $sanpham]);
+        return view('admin.sanpham.edit', ['sanpham' => $sanpham]);
     }
 
     public function update(Request $request, $id) // Cập nhật sản phẩm
@@ -63,13 +63,13 @@ class SanPhamController extends Controller
         $sanpham = SanPham::findOrFail($id);
         $sanpham->update($validated); // Sử dụng Eloquent để cập nhật sản phẩm
 
-        return redirect('/sanpham')->with('success', 'Sản phẩm đã được cập nhật thành công!');
+        return redirect('admin/sanpham')->with('success', 'Sản phẩm đã được cập nhật thành công!');
     }
 
     public function destroy($id) // Xóa sản phẩm
     {
         $sanpham = SanPham::findOrFail($id);
         $sanpham->delete(); // Sử dụng Eloquent để xóa sản phẩm
-        return redirect('/sanpham')->with('success', 'Sản phẩm đã được xóa thành công!');
+        return redirect('admin/sanpham')->with('success', 'Sản phẩm đã được xóa thành công!');
     }
 }

@@ -10,12 +10,12 @@ class KhachHangController extends Controller
     public function index()
     {
         $khachhangs = KhachHang::all();
-        return view('khachhang.index', compact('khachhangs'));
+        return view('admin.khachhang.index', compact('khachhangs'));
     }
 
     public function create()
     {
-        return view('khachhang.create');
+        return view('admin.khachhang.create');
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class KhachHangController extends Controller
     public function edit($id)
     {
         $khachhang = KhachHang::findOrFail($id);
-        return view('khachhang.edit', compact('khachhang'));
+        return view('admin.khachhang.edit', compact('khachhang'));
     }
 
     public function update(Request $request, $id)

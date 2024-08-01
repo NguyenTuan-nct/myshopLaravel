@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('resources/css/invoice.css') }}">
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <h1>Sửa Hóa Đơn</h1>

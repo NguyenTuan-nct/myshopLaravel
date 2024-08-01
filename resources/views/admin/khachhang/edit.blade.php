@@ -1,7 +1,7 @@
 <!-- resources/views/khachhang/edit.blade.php -->
  
 <link rel="stylesheet" href="{{ asset('resources/cs s/indexkhachhang.css') }}">
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('title', 'Sửa Thông Tin Khách Hàng')
 
@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <form action="{{ route('khachhang.update', $khachhang->id) }}" method="POST">
+    <form action="{{ route('admin.khachhang.update', $khachhang->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">

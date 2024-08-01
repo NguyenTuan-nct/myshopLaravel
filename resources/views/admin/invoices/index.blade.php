@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('title', 'Invoices')
 
@@ -10,7 +10,7 @@
             <tr>
                 <th>ID Hóa Đơn</th>
                 <th>Tên Khách Hàng</th>
-                <th>Địa Chỉ</th>
+                <th>Số Điện Thoại</th>
                 <th>Hành Động</th>
             </tr>
         </thead>

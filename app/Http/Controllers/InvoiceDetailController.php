@@ -12,13 +12,13 @@ class InvoiceDetailController extends Controller
     {
         $invoice = Invoice::find($invoiceId);
         $details = $invoice->details;
-        return view('invoice_details.index', compact('invoice', 'details'));
+        return view('admin.invoice_details.index', compact('invoice', 'details'));
     }
 
     public function create($invoiceId)
     {
         $invoice = Invoice::find($invoiceId);
-        return view('invoice_details.create', compact('invoice'));
+        return view('admin.invoice_details.create', compact('invoice'));
     }
 
     public function store(Request $request, $invoiceId)
@@ -37,7 +37,7 @@ class InvoiceDetailController extends Controller
     {
         $invoice = Invoice::find($invoiceId);
         $detail = InvoiceDetail::find($id);
-        return view('invoice_details.edit', compact('invoice', 'detail'));
+        return view('admin.invoice_details.edit', compact('invoice', 'detail'));
     }
 
     public function update(Request $request, $invoiceId, $id)

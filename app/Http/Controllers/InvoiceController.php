@@ -11,12 +11,12 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoices = Invoice::all();
-        return view('invoices.index', compact('invoices'));
+        return view('admin.invoices.index', compact('invoices'));
     }
 
     public function create()
     {
-        return view('invoices.create');
+        return view('admin.invoices.create');
     }
 
     public function store(Request $request)
@@ -32,7 +32,7 @@ class InvoiceController extends Controller
     public function edit($id)
     {
         $invoice = Invoice::find($id);
-        return view('invoices.edit', compact('invoice'));
+        return view('admin.invoices.edit', compact('invoice'));
     }
 
     public function update(Request $request, $id)
