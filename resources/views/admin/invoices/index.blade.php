@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ url('CSS/invoice.css') }}">
 @extends('admin.layouts.app')
 
 @section('title', 'Invoices')

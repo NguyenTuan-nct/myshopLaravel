@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('resources/css/invoice.css') }}">
+<link rel="stylesheet" href="{{ url('CSS/invoice.css') }}">
 @extends('admin.layouts.app')
 
 @section('content')

@@ -1,5 +1,5 @@
 <!-- resources/views/sanpham/index.blade.php -->
-<link rel="stylesheet" href="{{ asset('resources/css/viewsp.css') }}">
+<link rel="stylesheet" href="{{ url('CSS/viewsp.css') }}">
 <!-- Thêm thư viện hover.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 
@@ -14,7 +14,7 @@
             {{ session('success') }}
         </div>
     @endif
-    <a href="{{ route('sanpham.store') }}" class="btn btn-primary mb-3">Add New SP</a>
+    <a href="{{ route('sanpham.store') }}" class="btn btn-primary1 mb-3">Add New SP</a>
     <hr>
 
     <h2 class="mt-4">Danh Sách Sản Phẩm</h2>

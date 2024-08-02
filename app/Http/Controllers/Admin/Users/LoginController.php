@@ -16,8 +16,9 @@ class LoginController extends Controller
         ]);
     }
 
-    /*public function store(Request $request)
+    public function store(Request $request)
     {
+        
         $this->validate($request, [
             'email' => 'required|email:filter',
             'password' => 'required'
@@ -33,5 +34,5 @@ class LoginController extends Controller
 
         Session::flash('error', 'Email hoặc Password không đúng');
         return redirect()->back();
-    }*/
+    }
 }

@@ -1,0 +1,160 @@
+/* CSS/viewsp.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Màu nền nhạt cho trang */
+    color: #333; /* Màu chữ đen đậm */
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #ff6f61; /* Màu tiêu đề nổi bật */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.alert-success {
+    background-color: #d4edda; /* Màu nền cho thông báo thành công */
+    color: #155724; /* Màu chữ cho thông báo thành công */
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #ff9800; /* Màu cam cho nút chính */
+    border-color: #ff9800;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Bo góc cho nút */
+}
+
+.btn-primary:hover {
+    background-color: #fb8c00;
+    border-color: #f57c00;
+}
+
+.table {
+    width: 90%; /* Giảm kích thước bảng để tạo khoảng trống */
+    margin: 20px auto; /* Căn giữa bảng */
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px; /* Bo góc cho bảng */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho bảng */
+}
+
+.table thead {
+    background-color: #ff9800; /* Màu cam cho tiêu đề bảng */
+    color: #fff;
+    font-size: 18px;
+}
+
+.table th,
+.table td {
+    padding: 15px; /* Khoảng cách giữa các ô trong bảng */
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    position: relative;
+}
+
+.table th {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Màu nền xen kẽ cho các dòng */
+}
+
+.table tbody tr:hover {
+    background-color: #d1fffa; /* Màu nền khi hover vào dòng */
+    transform: scale(1.01); /* Hiệu ứng phóng to nhẹ khi hover */
+    transition: all 0.3s ease-in-out;
+}
+
+.table img {
+    border-radius: 5px;
+    width: 60px; /* Điều chỉnh kích thước ảnh */
+    height: auto;
+}
+
+.btn-sm {
+    padding: 7px 12px;
+    font-size: 14px;
+    border-radius: 7px;
+}
+
+.btn.btn-primary1{
+    background-color: #2ec5bb; /* Màu đỏ cho nút xóa */
+    border-color: #3faf19;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Bo góc cho nút */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Màu đỏ cho nút xóa */
+    border-color: #dc3545;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Bo góc cho nút */
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+form.d-inline {
+    display: inline-block;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .table,
+    .table thead,
+    .table tbody,
+    .table th,
+    .table td,
+    .table tr {
+        display: block;
+    }
+
+    .table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .table tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    .table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        background-color: #f0f0f0;
+    }
+
+    .table td:before {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+    }
+}

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Bạn đã đăng nhập vào trang quản trị!') }}
+                    {{ __('Xin Chào!') }}
                 </div>
             </div>
         </div>

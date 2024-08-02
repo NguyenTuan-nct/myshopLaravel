@@ -1,5 +1,5 @@
 <!-- resources/views/khachhang/index.blade.php -->
-<link rel="stylesheet" href="{{ asset('resources/css/indexkhachhang.css') }}">
+<link rel="stylesheet" href="{{ url('CSS/indexkhachhang.css') }}">
 @extends('admin.layouts.app')
 
 @section('title', 'Quản Lý Khách Hàng')
