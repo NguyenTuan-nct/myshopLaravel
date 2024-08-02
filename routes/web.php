@@ -54,6 +54,8 @@ Route::put('admin/invoices/{invoice}/details/{detail}', [InvoiceDetailController
 Route::delete('admin/invoices/{invoice}/details/{detail}', [InvoiceDetailController::class, 'destroy'])->name('invoice_details.destroy');
 
 //Auth
+use \App\Http\Controllers\Admin\Users\LoginController;
+Route::get('admin/users/login', [LoginController::class, 'index']);
 
 
 
