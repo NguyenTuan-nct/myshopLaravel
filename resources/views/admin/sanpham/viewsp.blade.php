@@ -30,6 +30,7 @@
                 <th>Tồn Kho</th>
                 <th>Mô Tả</th>
                 <th>Kho Hàng ID</th>
+                <th>Danh Mục</th> <!-- Thêm cột Danh Mục -->
                 <th>Hành Động</th> 
             </tr>
         </thead>
@@ -45,6 +46,7 @@
                 <td>{{ $sanpham->TonKho }}</td>
                 <td>{{ $sanpham->MoTa }}</td>
                 <td>{{ $sanpham->KhoHangId }}</td>
+                <td>{{ $sanpham->danhmuc->ten_danh_muc ?? 'Không xác định' }}</td> <!-- Hiển thị tên danh mục -->
                 <td>
                     <a href="{{ route('sanpham.edit', $sanpham->SanPhamId) }}" class="btn btn-primary btn-sm">Sửa</a>
                     <form action="{{ route('sanpham.destroy', $sanpham->SanPhamId) }}" method="POST" class="d-inline">

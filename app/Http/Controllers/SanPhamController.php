@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SanPham;
+use App\Models\DanhMuc; // Import DanhMuc model
 
 class SanPhamController extends Controller
 {
@@ -14,21 +15,24 @@ class SanPhamController extends Controller
 
     public function viewsp() // Hiển thị danh sách sản phẩm
     {
-        $sanphams = SanPham::all();
+        // Lấy tất cả sản phẩm cùng với thông tin danh mục
+        $sanphams = SanPham::with('danhmuc')->get();
         return view('admin.sanpham.viewsp', ['sanphams' => $sanphams]);
     }
 
-    public function viewsp_kh() // Hiển thị danh sách sản phẩm
+    public function viewsp_kh() // Hiển thị danh sách sản phẩm cho khách hàng
     {
-        $sanphams = SanPham::all();
+        $sanphams = SanPham::with('danhmuc')->get();
         return view('client.sanpham.viewsp_kh', ['sanphams' => $sanphams]);
     }
 
     public function create() // Tạo sản phẩm mới
     {
-        return view('admin.sanpham.create');
+        // Lấy danh sách danh mục để lựa chọn
+        $danhmucs = DanhMuc::all();
+        return view('admin.sanpham.create', ['danhmucs' => $danhmucs]);
     }
-
+    
     public function store(Request $request) // Lưu sản phẩm mới
     {
         $validated = $request->validate([
@@ -40,6 +44,7 @@ class SanPhamController extends Controller
             'TonKho' => 'required|integer',
             'MoTa' => 'required|string|max:255',
             'KhoHangId' => 'required|integer',
+            'DanhMucId' => 'required|integer|exists:danhmuc,id', // Validate DanhMucId
         ]);
 
         SanPham::create($validated); // Sử dụng Eloquent để tạo sản phẩm
@@ -50,7 +55,8 @@ class SanPhamController extends Controller
     public function edit($id) // Chỉnh sửa sản phẩm
     {
         $sanpham = SanPham::findOrFail($id); // Sử dụng Eloquent để tìm sản phẩm
-        return view('admin.sanpham.edit', ['sanpham' => $sanpham]);
+        $danhmucs = DanhMuc::all(); // Lấy danh sách danh mục để hiển thị
+        return view('admin.sanpham.edit', ['sanpham' => $sanpham, 'danhmucs' => $danhmucs]);
     }
 
     public function update(Request $request, $id) // Cập nhật sản phẩm
@@ -64,6 +70,7 @@ class SanPhamController extends Controller
             'TonKho' => 'required|integer',
             'MoTa' => 'required|string|max:255',
             'KhoHangId' => 'required|integer',
+            'DanhMucId' => 'required|integer|exists:danhmuc,id', // Validate DanhMucId
         ]);
 
         $sanpham = SanPham::findOrFail($id);

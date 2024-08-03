@@ -24,5 +24,12 @@ class SanPham extends Model
         'TonKho',
         'MoTa',
         'KhoHangId',
+        'DanhMucId', // Thêm DanhMucId để hỗ trợ khóa ngoại
     ];
+
+    // Thiết lập mối quan hệ với model DanhMuc
+    public function danhmuc()
+    {
+        return $this->belongsTo(DanhMuc::class, 'DanhMucId');
+    }
 }

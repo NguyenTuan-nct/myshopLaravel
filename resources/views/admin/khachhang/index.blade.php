@@ -6,11 +6,13 @@
 
 @section('content')
 
+<div class="container"> <!-- Bắt đầu container -->
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
+
     <a href="{{ route('khachhang.store') }}" class="btn btn-primary mb-3">Add New KH</a>
     <hr>
     
@@ -46,4 +48,6 @@
             @endforeach
         </tbody>
     </table>
+</div> <!-- Kết thúc container -->
+
 @endsection
