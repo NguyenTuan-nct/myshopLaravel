@@ -18,6 +18,12 @@ class SanPhamController extends Controller
         return view('admin.sanpham.viewsp', ['sanphams' => $sanphams]);
     }
 
+    public function viewsp_kh() // Hiển thị danh sách sản phẩm
+    {
+        $sanphams = SanPham::all();
+        return view('client.sanpham.viewsp_kh', ['sanphams' => $sanphams]);
+    }
+
     public function create() // Tạo sản phẩm mới
     {
         return view('admin.sanpham.create');

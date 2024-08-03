@@ -21,7 +21,7 @@ use App\Http\Controllers\Admin\Users\LoginController;
 */
 
 
-Route::get('', [HomeController::class, 'index'])->name('homeafter');
+Route::get('admin-home', [HomeController::class, 'index'])->name('homeafter');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -32,7 +32,6 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('admin/khachhang/{id}', [KhachHangController::class, 'destroy'])->name('khachhang.destroy');
     Route::get('admin/addkh', [KhachHangController::class, 'create'])->name('khachhang.create');
     Route::post('admin/addkh', [KhachHangController::class, 'store'])->name('khachhang.store');
-
 
     Route::get('admin/sanpham', [SanPhamController::class, 'viewsp'/*tên hàm*/])->name('sanpham.viewsp');
     Route::get('admin/sanpham/{id}/edit', [SanPhamController::class, 'edit'])->name('sanpham.edit');
@@ -61,5 +60,8 @@ Route::post('admin/users/login/store', [LoginController::class, 'store']);
 // Định nghĩa route đăng xuất
 Route::post('/logout', function () {
     Auth::logout();
-    return redirect('adminhome'); // hoặc route khác mà bạn muốn chuyển hướng sau khi đăng xuất
+    return redirect('admin-home'); // hoặc route khác mà bạn muốn chuyển hướng sau khi đăng xuấts
 })->name('logout');
+
+
+Route::get('customer/sanpham', [SanPhamController::class, 'viewsp_kh'/*tên hàm*/])->name('sanpham.viewsp_kh');

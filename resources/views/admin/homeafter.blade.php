@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Xin Chào!') }}
+                    {{ __('Trang Quản Trị - NCTshop') }}
                 </div>
             </div>
         </div>
