@@ -41,18 +41,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('admin/addsp', [SanPhamController::class, 'store'])->name('sanpham.store');
 
     Route::get('admin/hoadon', [InvoiceController::class, 'index'/*tên hàm*/])->name('invoices.index');
-    Route::get('admin/hoadon/{id}/edit', [InvoiceController::class, 'edit'])->name('invoices.edit');
+    //Route::get('admin/hoadon/{id}/edit', [InvoiceController::class, 'edit'])->name('invoices.edit');
     Route::put('admin/hoadon/{id}', [InvoiceController::class, 'update'])->name('invoices.update');
     Route::delete('admin/hoadon/{id}', [InvoiceController::class, 'destroy'])->name('invoices.destroy');
     Route::get('admin/addhoadon', [InvoiceController::class, 'create'])->name('invoices.create');
     Route::post('admin/addhoadon', [InvoiceController::class, 'store'])->name('invoices.store');
 
     Route::get('admin/invoices/{invoice}/details', [InvoiceDetailController::class, 'index'])->name('invoice_details.index');
-    Route::get('admin/invoices/{invoice}/details/create', [InvoiceDetailController::class, 'create'])->name('invoice_details.create');
+    //Route::get('admin/invoices/{invoice}/details/create', [InvoiceDetailController::class, 'create'])->name('invoice_details.create');
     Route::post('admin/invoices/{invoice}/details', [InvoiceDetailController::class, 'store'])->name('invoice_details.store');
-    Route::get('admin/invoices/{invoice}/details/{detail}/edit', [InvoiceDetailController::class, 'edit'])->name('invoice_details.edit');
+    //Route::get('admin/invoices/{invoice}/details/{detail}/edit', [InvoiceDetailController::class, 'edit'])->name('invoice_details.edit');
     Route::put('admin/invoices/{invoice}/details/{detail}', [InvoiceDetailController::class, 'update'])->name('invoice_details.update');
-    Route::delete('admin/invoices/{invoice}/details/{detail}', [InvoiceDetailController::class, 'destroy'])->name('invoice_details.destroy');
+    //Route::delete('admin/invoices/{invoice}/details/{detail}', [InvoiceDetailController::class, 'destroy'])->name('invoice_details.destroy');
 });
 
 Route::get('admin/users/login', [LoginController::class, 'index']) -> name('login');

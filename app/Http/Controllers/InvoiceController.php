@@ -72,7 +72,7 @@ class InvoiceController extends Controller
         return redirect()->route('invoices.index')->with('success', 'Hóa đơn được tạo thành công');
     }
 
-    public function edit($id)
+    /*public function edit($id)
     {
         // Tìm hóa đơn theo ID
         $invoice = Invoice::find($id);
@@ -80,7 +80,7 @@ class InvoiceController extends Controller
         $products = SanPham::all();
         $invoiceDetails = $invoice->details; // Lấy chi tiết hóa đơn hiện tại
         return view('admin.invoices.edit', compact('invoice', 'customers', 'products', 'invoiceDetails'));
-    }
+    }*/
 
     public function update(Request $request, $id)
     {

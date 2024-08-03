@@ -23,7 +23,6 @@
                     <td>{{ number_format($invoice->total_amount, 0, ',', '.') }} đ</td>
                     <td>
                         <a href="{{ route('invoice_details.index', $invoice->id) }}" class="btn btn-info btn-sm">View Details</a>
-                        <a href="{{ route('invoices.edit', $invoice->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('invoices.destroy', $invoice->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

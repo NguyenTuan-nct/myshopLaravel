@@ -99,7 +99,7 @@ class InvoiceDetailController extends Controller
         return redirect()->route('invoice_details.index', $invoiceId)->with('success', 'Chi tiết hóa đơn được cập nhật thành công');
     }
 
-    public function destroy($invoiceId, $detailId)
+    /*public function destroy($invoiceId, $detailId)
     {
         $detail = InvoiceDetail::findOrFail($detailId);
 
@@ -115,5 +115,5 @@ class InvoiceDetailController extends Controller
         });
 
         return redirect()->route('invoice_details.index', $invoiceId)->with('success', 'Chi tiết hóa đơn được xóa thành công');
-    }
+    }*/
 }
