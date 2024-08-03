@@ -5,13 +5,13 @@
 
 @section('content')
     <h1>Hóa Đơn</h1>
-    <a href="{{ route('invoices.store') }}" class="btn btn-primary mb-3">Add New Invoice</a>
+    <a href="{{ route('invoices.create') }}" class="btn btn-primary mb-3">Add New Invoice</a>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID Hóa Đơn</th>
                 <th>Tên Khách Hàng</th>
-                <th>Số Điện Thoại</th>
+                <th>Thành Tiền</th>
                 <th>Hành Động</th>
             </tr>
         </thead>
@@ -19,8 +19,8 @@
             @foreach ($invoices as $invoice)
                 <tr>
                     <td>{{ $invoice->id }}</td>
-                    <td>{{ $invoice->customer_name }}</td>
-                    <td>{{ $invoice->total_amount }}</td>
+                    <td>{{ $invoice->customer ? $invoice->customer->ten_khach_hang : 'N/A' }}</td>
+                    <td>{{ number_format($invoice->total_amount, 0, ',', '.') }} đ</td>
                     <td>
                         <a href="{{ route('invoice_details.index', $invoice->id) }}" class="btn btn-info btn-sm">View Details</a>
                         <a href="{{ route('invoices.edit', $invoice->id) }}" class="btn btn-warning btn-sm">Edit</a>
