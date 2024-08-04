@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.head')
 
 @section('content')
     <h1 class="text-center my-4">Lập Hóa Đơn</h1>

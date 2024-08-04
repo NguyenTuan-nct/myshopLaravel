@@ -1,6 +1,6 @@
 <!-- resources/views/khachhang/index.blade.php -->
 <link rel="stylesheet" href="{{ url('CSS/indexkhachhang.css') }}">
-@extends('admin.layouts.app')
+@extends('admin.head')
 
 @section('title', 'Quản Lý Khách Hàng')
 

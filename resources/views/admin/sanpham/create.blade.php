@@ -1,6 +1,6 @@
 <!-- resources/views/sanpham/create.blade.php -->
 
-@extends('admin.layouts.app')
+@extends('admin.head')
 
 @section('title', 'Thêm Sản Phẩm')
 

@@ -1,0 +1,80 @@
+ /* Đảm bảo bạn đã bao gồm các thành phần CSS của Bootstrap trước khi thêm các quy tắc tùy chỉnh */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    /* Tổng quát cho toàn bộ ứng dụng */
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* Thanh điều hướng */
+    .navbar {
+        background-color: #fff; /* Màu nền trắng */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        padding: 0.8rem 2rem;
+        border-bottom: 2px solid #f1f1f1; /* Đường viền dưới */
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem; /* Kích thước chữ lớn hơn */
+        font-weight: 600;
+        color: #3490dc !important; /* Màu xanh chính */
+        transition: color 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+        color: #1d68a7 !important; /* Màu khi di chuột */
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #555; /* Màu chữ xám đậm */
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #3490dc; /* Màu xanh khi di chuột */
+    }
+    
+    .nav-item.active .nav-link {
+        color: #3490dc; /* Màu xanh cho mục đang chọn */
+        font-weight: 600; /* Đậm hơn khi mục được chọn */
+    }
+    
+    .navbar-toggler {
+        border: none; /* Xóa đường viền của nút toggler */
+        outline: none; /* Xóa viền ngoài */
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2855, 65, 81, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        filter: invert(0.5); /* Đổi màu icon thành xám đậm */
+    }
+    
+    /* Hiệu ứng cho thanh điều hướng khi cuộn */
+    .navbar.fixed-top.scrolled {
+        background-color: #3490dc;
+        transition: background-color 200ms linear;
+    }
+    
+    .navbar.fixed-top.scrolled .nav-link,
+    .navbar.fixed-top.scrolled .navbar-brand {
+        color: #fff !important;
+    }
+    
+    .navbar.fixed-top.scrolled .nav-link:hover {
+        color: #f1f1f1 !important;
+    }
+    
+    /* Đa nền tảng */
+    @media (max-width: 768px) {
+        .navbar-nav {
+            background-color: #fff; /* Đảm bảo nền trắng trên di động */
+            padding: 1rem;
+        }
+    
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+    }

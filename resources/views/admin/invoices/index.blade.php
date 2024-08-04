@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ url('CSS/invoice.css') }}">
-@extends('admin.layouts.app')
+@extends('admin.head')
 
 @section('title', 'Invoices')
 
@@ -22,7 +22,7 @@
                     <td>{{ $invoice->customer ? $invoice->customer->ten_khach_hang : 'N/A' }}</td>
                     <td>{{ number_format($invoice->total_amount, 0, ',', '.') }} đ</td>
                     <td>
-                        <a href="{{ route('invoice_details.index', $invoice->id) }}" class="btn btn-info btn-sm">View Details</a>
+                        <a href="{{ route('invoice_details.index', $invoice->id) }}" class="btn btn-info btn-sm">Xem Chi Tiết</a>
                         <form action="{{ route('invoices.destroy', $invoice->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

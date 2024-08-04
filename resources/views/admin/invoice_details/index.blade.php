@@ -1,7 +1,7 @@
 <!-- resources/views/invoices/show.blade.php -->
 <link rel="stylesheet" href="{{ url('CSS/invoice.css') }}">
 
-@extends('admin.layouts.app')
+@extends('admin.head')
 
 @section('title', 'Chi Tiết Hóa Đơn')
 

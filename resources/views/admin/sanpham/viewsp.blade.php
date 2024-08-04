@@ -3,7 +3,7 @@
 <!-- Thêm thư viện hover.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 
-@extends('admin.layouts.app')
+@extends('admin.head')
 
 @section('title', 'Quản Lý Sản Phẩm')
 
