@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ url('CSS/navbar.css') }}">
 
 <!-- resources/views/admin/layouts/navbar.blade.php -->
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}

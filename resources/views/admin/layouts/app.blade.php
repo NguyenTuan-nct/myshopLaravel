@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Default Title')</title> <!-- Sử dụng Default Title nếu không có title -->
+    <title>@yield('title', 'Nguyen Tuan Store')</title> <!-- Sử dụng Default Title nếu không có title -->
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">

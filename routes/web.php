@@ -7,8 +7,9 @@ use App\Http\Controllers\KhachHangController;
 use App\Http\Controllers\SanPhamController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\InvoiceDetailController;
-use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\MainControllerUser;
 use App\Http\Controllers\Admin\Users\LoginController;
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,11 +22,12 @@ use App\Http\Controllers\Admin\Users\LoginController;
 */
 
 
-Route::get('admin-home', [HomeController::class, 'index'])->name('homeafter');
+//Route::get('admin-home', [HomeController::class, 'index'])->name('homeafter');
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('admin', [MainController::class, 'index'])->name('admin');
+    Route::get('admin-home', [HomeController::class, 'index'])->name('homeafter');
+    Route::get('admin', [MainControllerUser::class, 'index'])->name('admin');
     Route::get('admin/khachhang', [KhachHangController::class, 'index'])->name('khachhang.index');
     Route::get('admin/khachhang/{id}/edit', [KhachHangController::class, 'edit'])->name('khachhang.edit');
     Route::put('admin/khachhang/{id}', [KhachHangController::class, 'update'])->name('admin.khachhang.update');
@@ -65,3 +67,6 @@ Route::post('/logout', function () {
 
 
 Route::get('customer/sanpham', [SanPhamController::class, 'viewsp_kh'/*tên hàm*/])->name('sanpham.viewsp_kh');
+
+Route::get('/', [MainController::class, 'index']);
+       // Route::get('main', [MainControllerUser::class, 'index']);

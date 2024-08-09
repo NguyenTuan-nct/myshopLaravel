@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Xin Chào') }}</div>
+                <div class="card-header">{{ __('Xin Chào!') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Trang Quản Trị - NCTshop') }}
+                    {{ __('Bạn Đã Đăng Nhập Vào Trang Quản Trị - NguyenTuanStore') }}
                 </div>
             </div>
         </div>

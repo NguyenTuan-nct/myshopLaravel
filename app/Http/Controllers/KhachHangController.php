@@ -38,7 +38,7 @@ class KhachHangController extends Controller
         return view('admin.khachhang.edit', compact('khachhang'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) 
     {
         $request->validate([
             'ten_khach_hang' => 'required|string|max:255',
@@ -50,7 +50,7 @@ class KhachHangController extends Controller
         $khachhang = KhachHang::findOrFail($id);
         $khachhang->update($request->all());
 
-        return redirect()->route('khachhang.index')->with('success', 'Khách hàng đã được cập nhật thành công!');
+        return redirect()->route('khachhang.index')->with('success', 'Khách hàng đã được cập nhật!');
     }
 
     public function destroy($id)
@@ -59,7 +59,7 @@ class KhachHangController extends Controller
         $khachhang = KhachHang::findOrFail($id);
         $khachhang->delete();
 
-        return redirect()->route('khachhang.index')->with('success', 'Khách hàng đã được xóa thành công!');
+        return redirect()->route('khachhang.index')->with('success', 'Khách hàng đã được xóa!');
     }
 
     public function __construct()
